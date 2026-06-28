@@ -3,9 +3,9 @@
   Portfólio Pessoal — Eduarda
   Atividade Prática · Fundamentos da Programação Web · UNINTER
 
-  Estrutura: Single Page Website com navegação por âncoras (opção "b" do enunciado).
-  Um único arquivo HTML, 4 seções obrigatórias (Sobre mim, Formação, Portfólio, Contato),
-  menu fixo visível em todas as seções, sem recarregar a página.
+  Estrutura: Single Page Website com navegação por âncoras.
+  Um único arquivo HTML, 4 seções (Sobre mim, Formação, Portfólio, Contato),
+  menu fixo visível em todas as seções.
 -->
 <html lang="pt-BR" data-theme="light">
 <head>
@@ -28,7 +28,7 @@
     <div class="header-inner">
       <a href="#topo" class="logo">ED<span class="logo-dot">•</span></a>
 
-      <!-- Menu de navegação por âncoras: precisa estar visível em todas as seções -->
+      <!-- Menu de navegação por âncoras -->
       <nav class="main-nav" id="mainNav">
         <a href="#sobre" class="nav-link">Sobre mim</a>
         <a href="#formacao" class="nav-link">Formação</a>
@@ -37,13 +37,13 @@
       </nav>
 
       <div class="header-actions">
-        <!-- Botão de alternância de tema claro/escuro (requisito do enunciado) -->
+        <!-- Botão de alternância de tema claro/escuro -->
         <button id="themeToggle" class="icon-btn" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
           <svg id="iconSun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg id="iconMoon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
         </button>
 
-        <!-- Botão hambúrguer: aparece apenas em telas pequenas (menu responsivo) -->
+        <!-- Botão hambúrguer: aparece apenas em telas pequenas -->
         <button id="menuToggle" class="icon-btn nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
