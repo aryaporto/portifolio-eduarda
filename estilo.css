@@ -1,11 +1,6 @@
-/* =====================================================================
-   estilo.css — Portfólio Eduarda
-   Sem frameworks (sem Bootstrap/Tailwind/etc). CSS puro com variáveis.
-   ===================================================================== */
-
-/* ---------- Tokens de design (cores, tipografia, espaçamento) ---------- */
+/* ---------- cores, tipografia, espaçamento ---------- */
 :root {
-  /* Paleta — tom petróleo (dados/análise) + acento âmbar (destaque) */
+  /* Paleta */
   --bg: #f4f6f5;
   --bg-alt: #e9edec;
   --surface: #ffffff;
