@@ -1,6 +1,5 @@
 /* =====================================================================
    script.js — Portfólio Eduarda
-   JavaScript puro (sem jQuery/frameworks), conforme exigido na atividade.
    Responsabilidades:
      1. Alternar tema claro/escuro e lembrar a escolha do usuário.
      2. Abrir/fechar o menu responsivo em telas pequenas.
