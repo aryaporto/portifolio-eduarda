@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--
+  Portfólio Pessoal — Eduarda
+  Atividade Prática · Fundamentos da Programação Web · UNINTER
+
+  Estrutura: Single Page Website com navegação por âncoras (opção "b" do enunciado).
+  Um único arquivo HTML, 4 seções obrigatórias (Sobre mim, Formação, Portfólio, Contato),
+  menu fixo visível em todas as seções, sem recarregar a página.
+-->
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduarda · Análise de Dados &amp; Automação</title>
+  <meta name="description" content="Portfólio pessoal de Eduarda — Análise de Dados e Automação de Processos com IA." />
+
+  <!-- Fontes: par geométrico (display) + serifa (corpo) + monoespaçada (rótulos/dados) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz@8..60&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO / MENU FIXO ===================== -->
+  <header class="site-header" id="topo">
+    <div class="header-inner">
+      <a href="#topo" class="logo">ED<span class="logo-dot">•</span></a>
+
+      <!-- Menu de navegação por âncoras: precisa estar visível em todas as seções -->
+      <nav class="main-nav" id="mainNav">
+        <a href="#sobre" class="nav-link">Sobre mim</a>
+        <a href="#formacao" class="nav-link">Formação</a>
+        <a href="#portfolio" class="nav-link">Portfólio</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Botão de alternância de tema claro/escuro (requisito do enunciado) -->
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <svg id="iconSun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg id="iconMoon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+
+        <!-- Botão hambúrguer: aparece apenas em telas pequenas (menu responsivo) -->
+        <button id="menuToggle" class="icon-btn nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">-- portfolio.iniciar()</p>
+        <h1>Eduarda <span class="accent">[Sobrenome]</span></h1>
+        <p class="hero-role">Análise de Dados &amp; Automação de Processos com IA</p>
+        <p class="hero-lede">
+          Estudante de Análise e Desenvolvimento de Sistemas, transformando rotinas manuais
+          de pesquisa em pipelines automatizados — de planilhas dispersas a dashboards
+          confiáveis. Baseada em Florianópolis &mdash; SC.
+        </p>
+
+        <!-- Elemento de assinatura: pequeno "pipeline" representando a transição de carreira -->
+        <svg class="pipeline" viewBox="0 0 640 110" role="img" aria-label="Trajetória: Pesquisa de mercado, Automação e dados, Análise e BI">
+          <line x1="70" y1="55" x2="280" y2="55" class="pipeline-line" />
+          <line x1="350" y1="55" x2="560" y2="55" class="pipeline-line" />
+          <g class="pipeline-node">
+            <circle cx="40" cy="55" r="6" />
+            <text x="40" y="85" text-anchor="middle" class="pipeline-label">Pesquisa de<tspan x="40" dy="14">mercado</tspan></text>
+          </g>
+          <g class="pipeline-node">
+            <circle cx="315" cy="55" r="6" />
+            <text x="315" y="85" text-anchor="middle" class="pipeline-label">Automação &amp;<tspan x="315" dy="14">dados</tspan></text>
+          </g>
+          <g class="pipeline-node">
+            <circle cx="595" cy="55" r="6" />
+            <text x="595" y="85" text-anchor="middle" class="pipeline-label">Análise &amp;<tspan x="595" dy="14">BI</tspan></text>
+          </g>
+        </svg>
+
+        <div class="hero-cta">
+          <a href="#portfolio" class="btn btn-primary">Ver portfólio</a>
+          <a href="#contato" class="btn btn-ghost">Entrar em contato</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 1. SOBRE MIM ===================== -->
+    <section id="sobre" class="section">
+      <div class="section-inner two-col">
+        <div>
+          <p class="eyebrow">-- sobre</p>
+          <h2>Sobre mim</h2>
+          <p>
+            Sou estudante do curso de Análise e Desenvolvimento de Sistemas (UNINTER) e atuo
+            na fronteira entre pesquisa de mercado e dados: passei o último período liderando
+            a adoção de automação e IA em uma agência de pesquisa, transformando processos
+            manuais e repetitivos em fluxos auditáveis e replicáveis.
+          </p>
+          <p>
+            Gosto de problemas que misturam organização de dados, lógica e um pouco de
+            paciência com planilhas — e de aprender a próxima ferramenta que vai tornar esse
+            trabalho mais rápido para quem vem depois de mim.
+            <!-- TODO (Eduarda): troque esta frase por 1-2 hobbies/interesses pessoais reais. -->
+          </p>
+          <ul class="tag-list" aria-label="Áreas de interesse">
+            <li>Análise de Dados</li>
+            <li>Automação de Processos</li>
+            <li>SQL &amp; Power BI</li>
+            <li>IA aplicada a fluxos de trabalho</li>
+          </ul>
+        </div>
+        <aside class="info-card" aria-label="Dados rápidos">
+          <p class="eyebrow">-- dados_rapidos</p>
+          <dl>
+            <div><dt>Local</dt><dd>Florianópolis &mdash; SC, Brasil</dd></div>
+            <div><dt>Curso</dt><dd>CST Análise e Desenvolvimento de Sistemas — UNINTER</dd></div>
+            <div><dt>Foco</dt><dd>Análise de Dados &amp; BI</dd></div>
+            <div><dt>Disponível para</dt><dd>Estágio / posição júnior em Dados</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== 2. FORMAÇÃO ===================== -->
+    <section id="formacao" class="section section-alt">
+      <div class="section-inner">
+        <p class="eyebrow">-- formacao</p>
+        <h2>Formação</h2>
+        <!-- Timeline ordenada: aqui a numeração tem significado real (ordem cronológica) -->
+        <ol class="timeline">
+          <li>
+            <span class="timeline-marker">01</span>
+            <div>
+              <h3>CST em Análise e Desenvolvimento de Sistemas</h3>
+              <p class="timeline-meta">UNINTER &middot; em andamento</p>
+              <p>Formação focada em lógica de programação, banco de dados e desenvolvimento de sistemas.</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker">02</span>
+            <div>
+              <h3>Google Data Analytics Certificate</h3>
+              <p class="timeline-meta">Google &middot; concluído</p>
+              <p>Fundamentos de análise de dados: limpeza, visualização e storytelling com dados.</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker">03</span>
+            <div>
+              <h3>SQL</h3>
+              <p class="timeline-meta">Alura &middot; concluído</p>
+              <p>Consultas, junções e modelagem de dados relacionais aplicadas a problemas reais.</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker">04</span>
+            <div>
+              <h3>Power BI</h3>
+              <p class="timeline-meta">em estudo</p>
+              <p>Construção de dashboards e modelos de dados para análise de negócio.</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker">05</span>
+            <div>
+              <h3>Trilha PL-300 (Power BI Data Analyst)</h3>
+              <p class="timeline-meta">Microsoft &middot; em andamento</p>
+              <p>Preparação para a certificação oficial de análise de dados em Power BI.</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Idiomas -->
+        <div class="lang-block">
+          <h3>Idiomas</h3>
+          <ul class="tag-list">
+            <li>Português — nativo</li>
+            <li>Inglês — <!-- TODO (Eduarda): ajuste o nível real --> intermediário/avançado</li>
+            <li>Francês — <!-- TODO (Eduarda): ajuste o nível real --> em estudo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. PORTFÓLIO ===================== -->
+    <section id="portfolio" class="section">
+      <div class="section-inner">
+        <p class="eyebrow">-- portfolio</p>
+        <h2>Portfólio</h2>
+        <p class="section-lede">Alguns projetos de dados e automação em que trabalhei recentemente.</p>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-tag">Dashboard &middot; React</p>
+            <h3>Dashboard Financeiro</h3>
+            <p>Painel interno para acompanhamento de custos por projeto, fluxo de caixa e prazos
+               de recebimento, com alertas automáticos de vencimento.</p>
+            <ul class="tech-list"><li>React</li><li>Dados financeiros</li><li>UX para times internos</li></ul>
+            <!-- TODO (Eduarda): troque "#" pelo link real do repositório/case, se houver -->
+            <a href="#" class="project-link">Ver detalhes →</a>
+          </article>
+
+          <article class="project-card">
+            <p class="project-tag">Automação &middot; IA</p>
+            <h3>Automação do Ciclo de Pesquisa</h3>
+            <p>Estrutura de assistentes de IA para padronizar etapas de um estudo de pesquisa de
+               mercado: auditoria de dados, validação de questionário e geração de relatórios.</p>
+            <ul class="tech-list"><li>Prompt engineering</li><li>QA de dados</li><li>Documentação de processos</li></ul>
+            <a href="#" class="project-link">Ver detalhes →</a>
+          </article>
+
+          <article class="project-card">
+            <p class="project-tag">Dados &middot; Prospecção</p>
+            <h3>Análise de Prospecção B2B</h3>
+            <p>Avaliação e estruturação de um fluxo de geração de leads, comparando ferramentas
+               e organizando critérios de segmentação por setor e porte de empresa.</p>
+            <ul class="tech-list"><li>Apollo.io</li><li>Segmentação de dados</li><li>Processos</li></ul>
+            <a href="#" class="project-link">Ver detalhes →</a>
+          </article>
+
+          <article class="project-card">
+            <p class="project-tag">Estatística &middot; Extensão</p>
+            <h3>Motor de Previsão de Notas (IELTS)</h3>
+            <p>Projeto de extensão universitária: modelo de regressão por mínimos quadrados
+               ponderados (WLS) para estimar faixas de pontuação em provas de proficiência.</p>
+            <ul class="tech-list"><li>WLS</li><li>Estatística aplicada</li><li>Documentação técnica</li></ul>
+            <a href="#" class="project-link">Ver detalhes →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. CONTATO ===================== -->
+    <section id="contato" class="section section-alt">
+      <div class="section-inner two-col">
+        <div>
+          <p class="eyebrow">-- contato</p>
+          <h2>Contato</h2>
+          <p>
+            Tem uma vaga, projeto ou ideia para trocar? Preencha o formulário ao lado —
+            os campos são validados antes do envio.
+          </p>
+          <ul class="contact-info">
+            <!-- TODO (Eduarda): atualize com seus links/contatos reais -->
+            <li><strong>E-mail:</strong> seuemail@exemplo.com</li>
+            <li><strong>LinkedIn:</strong> linkedin.com/in/seu-perfil</li>
+            <li><strong>GitHub:</strong> github.com/seu-usuario</li>
+          </ul>
+        </div>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name">
+            <span class="field-error" id="erroNome" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email">
+            <span class="field-error" id="erroEmail" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..."></textarea>
+            <span class="field-error" id="erroMensagem" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de confirmação de envio (substitui o alert() padrão do navegador) -->
+  <div id="successModal" class="modal-overlay" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Mensagem enviada com sucesso!</h3>
+      <p>Obrigada pelo contato. Retornarei o quanto antes.</p>
+      <button id="closeModal" class="btn btn-primary" type="button">Fechar</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="anoAtual"></span> Eduarda. Construído com HTML, CSS e JavaScript puros.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
