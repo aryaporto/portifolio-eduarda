@@ -296,6 +296,10 @@ ul { padding: 0; margin: 0; list-style: none; }
   z-index: 100;
   padding: 1rem;
 }
+.modal-overlay[hidden] {
+  display: none;
+}
+
 .modal-box {
   background: var(--surface);
   border-radius: var(--radius);
