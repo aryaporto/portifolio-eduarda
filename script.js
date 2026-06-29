@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var campoMensagem = document.getElementById("mensagem");
 
   // Expressão regular simples para validar formato de e-mail (ex: usuario@dominio.com)
-  var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var regexEmail = /^[^\s@]+@(?:[a-zA-Z0-9-]+\.)+(?:(?:com|net|org|gov|edu|mil|info|biz|co|io)(?:\.[a-z]{2})?|[a-z]{2})$/i;
 
   function mostrarErro(campo, elementoErro, mensagem) {
     campo.closest(".form-field").classList.add("invalid");
