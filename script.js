@@ -1,17 +1,5 @@
-/* =====================================================================
-   script.js — Portfólio Eduarda
-   Responsabilidades:
-     1. Alternar tema claro/escuro e lembrar a escolha do usuário.
-     2. Abrir/fechar o menu responsivo em telas pequenas.
-     3. Validar e simular o envio do formulário de contato.
-   ===================================================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ---------------------------------------------------------------
-     1) TEMA CLARO / ESCURO
-     A preferência é salva no localStorage para persistir entre visitas.
-  --------------------------------------------------------------- */
   var htmlEl = document.documentElement;
   var themeToggleBtn = document.getElementById("themeToggle");
   var iconSun = document.getElementById("iconSun");
@@ -19,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function aplicarTema(tema) {
     htmlEl.setAttribute("data-theme", tema);
-    // Alterna qual ícone (sol/lua) fica visível
     if (tema === "dark") {
       iconSun.style.display = "none";
       iconMoon.style.display = "inline";
@@ -123,11 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (!formularioValido) {
-      return; // interrompe o envio até que todos os campos estejam corretos
+      return; 
     }
 
-    // Simulação do envio: como não há servidor/back-end nesta atividade,
-    // apenas limpamos o formulário e exibimos a confirmação.
     form.reset();
     modal.hidden = false;
   });
@@ -136,15 +121,12 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.hidden = true;
   });
 
-  // Fecha o modal também ao clicar fora da caixa
   modal.addEventListener("click", function (evento) {
     if (evento.target === modal) {
       modal.hidden = true;
     }
   });
 
-  /* ---------------------------------------------------------------
-     4) Ano dinâmico no rodapé
-  --------------------------------------------------------------- */
+
   document.getElementById("anoAtual").textContent = new Date().getFullYear();
 });
